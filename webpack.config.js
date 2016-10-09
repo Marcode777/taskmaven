@@ -12,8 +12,22 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    modules
-  }
+    modulesDirectories: ["node_modules", "src"],
+    extensions: ["", ".js"]
+  },
+  module:{
+    loaders:[
+    {
+      test: /\.jsx?$/,
+      exlude:/node_module/,
+      loader:["react-hot", "babel?presets[]=react,presets[]=es2015"]
+    }
+    ]
+  }.
+  plugins:[
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ]
 };
 
 // might have to double-check this, as this was all manually typed
