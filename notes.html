@@ -19,3 +19,6 @@ npm i -g webpack webpack-dev-server      This is to install these globally
 also might need to install lodash globally even before these
 
 also to see the actual results, you actually might need to visit http://localhost:8080/webpack-dev-server/bundle
+
+
+<!--you're using webpack to transpile this from es6 to es5, because the export default statement is in es6 format. If you're using the configuration in the best answer above, then it's the name of your file that is the problem. The regular expression in the webpack.config.js above is looking for a file name ending in .jsx
